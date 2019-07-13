@@ -2,6 +2,7 @@ import java.math.BigInteger;
 
 BigInteger BIG2 = new BigInteger("2");
 BigInteger BIG3 = new BigInteger("3");
+BigInteger BIG4 = new BigInteger("4");
   
 void setup(){
   //size(1600,800);
@@ -13,10 +14,11 @@ void setup(){
 void draw(){
   int iterations = 320+32;
   float radius = 2; //MINIMUM 2!
-  boolean PrintText = true;
+  boolean PrintText = false;
   boolean HighlightEvens = false;
   boolean HighlightThirds = false;
-  boolean HighlightPrimes = true;
+  boolean HighlightFourths = true;
+  boolean HighlightPrimes = false;
   
   color RED = color(255,0,0);
   color GREEN = color(0,255,0);
@@ -105,6 +107,9 @@ void draw(){
           else if(HighlightThirds && nnOdd.get(x).mod(BIG3) == BigInteger.ZERO){
             fill(PURPLE);
           }
+          else if(HighlightFourths && nnOdd.get(x).mod(BIG4) == BigInteger.ZERO){
+            fill(GREEN);
+          }
           else{
             fill(WHITE);
           }
@@ -144,6 +149,9 @@ void draw(){
           else if(HighlightThirds && nnOdd.get(x).mod(BIG3) == BigInteger.ZERO){
             fill(PURPLE);
           }
+          else if(HighlightFourths && nnOdd.get(x).mod(BIG4) == BigInteger.ZERO){
+            fill(GREEN);
+          }
           else{
             fill(WHITE);
           }
@@ -163,6 +171,9 @@ void draw(){
           }
           else if(HighlightThirds && nnOdd.get(i-x+1).mod(BIG3) == BigInteger.ZERO){
             fill(PURPLE);
+          }
+          else if(HighlightFourths && nnOdd.get(i-x+1).mod(BIG4) == BigInteger.ZERO){
+            fill(GREEN);
           }
           else{
             fill(WHITE);
@@ -195,6 +206,9 @@ void draw(){
           else if(HighlightThirds && nnEven.get(x).mod(BIG3) == BigInteger.ZERO){
             fill(PURPLE);
           }
+          else if(HighlightFourths && nnEven.get(x).mod(BIG4) == BigInteger.ZERO){
+            fill(GREEN);
+          }
           else{
             fill(WHITE);
           }
@@ -213,6 +227,9 @@ void draw(){
           }
           else if(HighlightThirds && nnEven.get(i-x).mod(BIG3) == BigInteger.ZERO){
             fill(PURPLE);
+          }
+          else if(HighlightFourths && nnEven.get(i-x).mod(BIG4) == BigInteger.ZERO){
+            fill(GREEN);
           }
           else{
             fill(WHITE);
